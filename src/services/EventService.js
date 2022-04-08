@@ -11,4 +11,7 @@ export default {
   getContactUs() {
     return apiClient.get("contactus");
   },
+  AddContactUs(ContactUsData) {
+    return apiClient.post("contactus", ContactUsData);
+  },
 };

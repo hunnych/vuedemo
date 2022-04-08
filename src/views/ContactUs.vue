@@ -3,6 +3,9 @@
     <Header />
     <div id="contact-form" class="contact-form">
       <h1 class="contact-form_title">Contact Form</h1>
+      <p v-if="$store.state.NotificationMessageSuccess">
+        {{ $store.state.NotificationMessageSuccess }}
+      </p>
       <div class="separator"></div>
       <form class="form" @submit.prevent="submit">
         <input
@@ -75,9 +78,18 @@ export default {
     submit() {
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        console.log("Form Submission:", this.email);
-        console.log("Form Submission:", this.name);
-        console.log("Form Submission:", this.message);
+        this.$store
+          .dispatch("AddContactUsData", {
+            name: this.name,
+            email: this.email,
+            message: this.message,
+          })
+          .then(() => {
+            this.email = null;
+            this.name = null;
+            this.message = null;
+            this.$v.$reset();
+          });
       }
     },
   },

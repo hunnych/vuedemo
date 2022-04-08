@@ -7,10 +7,10 @@
           <span class="modal-title">{{ item.name }}</span>
           <span class="button-close" @click="$emit('close')">×</span>
         </div>
-        <small>{{item.email}}</small>
+        <small>{{ item.email }}</small>
         <!-- body -->
         <div class="modal-body">
-          <slot name="body">{{item.message}}</slot>
+          <slot name="body">{{ item.message }}</slot>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ span {
   cursor: pointer;
 }
 .modal-body {
-  padding-top:20px;
+  padding-top: 20px;
   text-align: center;
 }
 .modal-bottom {

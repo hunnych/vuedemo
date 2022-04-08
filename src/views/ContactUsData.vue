@@ -67,7 +67,11 @@ export default {
     },
     onSelect(item) {
       this.selected = item;
-      this.$modal.show(Modal, { item: item }, { draggable: true,Height:200,width:500 });
+      this.$modal.show(
+        Modal,
+        { item: item },
+        { draggable: true, Height: 200, width: 500 }
+      );
       this.selected = null;
     },
   },
