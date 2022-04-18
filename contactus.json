@@ -1,28 +1,10 @@
 {
   "contactus": [
     {
-      "id": "1",
-      "name": "Harshit Chauhan",
-      "email": "parth.sadatiya@radixweb.com",
-      "message": "This is a test message dasdasdasdas dasdasdasdasd asdasdasd asdasda sdasdasd asdasdasd"
-    },
-    {
-      "id": "2",
-      "name": "Harshit Chauhan",
-      "email": "harshit.chauhan@radixweb.com",
-      "message": "This is a test message dasdasdasdas dasdasdasdasd asdasdasd asdasda sdasdasd asdasdasd"
-    },
-    {
-      "id": "3",
-      "name": "Pranav Kolharkar",
-      "email": "pranav.kolharkar@radixweb.com",
-      "message": "This is a test message dasdasdasdas dasdasdasdasd asdasdasd asdasda sdasdasd asdasdasd"
-    },
-    {
-      "name": "test kolharkar",
-      "email": "test.kolharkar@radixusers2.com",
-      "message": "This is a test inquiry form.",
-      "id": "9mLNNCq"
+      "name": "Harshit chauhan",
+      "email": "hunybuny969@gmail.com",
+      "message": "This is a test inquiry",
+      "id": "cFOXFhF"
     }
   ]
 }

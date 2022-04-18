@@ -12,11 +12,12 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_CONTACT_US(state, payload) {
-      console.log("here");
+      console.log("here set contact us");
       state.ContactUs = payload;
     },
     SET_NOTIFICATION(state, payload) {
-      this.state.NotificationMessageSuccess = payload;
+      state.NotificationMessageSuccess = payload;
+      setTimeout(() => state.NotificationMessageSuccess = null, 5000);
     },
   },
   actions: {
@@ -29,6 +30,11 @@ export default new Vuex.Store({
       await EventService.AddContactUs(requestData).then(() => {
         commit("SET_NOTIFICATION", "Details submitted successfully");
         dispatch("getContactUsData");
+      });
+    },
+    async RemoveContactUs({ commit }, id) {
+      await EventService.DeleteContactUs(id).then(() => {
+        commit("SET_NOTIFICATION", "Record deleted successfully");
       });
     },
   },

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://10.10.10.22:3008/",
+  baseURL: "http://localhost:3000/",
   withCredentials: false,
   Accept: "application/json",
   "Content-Type": "application/json",
@@ -13,5 +13,8 @@ export default {
   },
   AddContactUs(ContactUsData) {
     return apiClient.post("contactus", ContactUsData);
+  },
+  DeleteContactUs(id) {
+    return apiClient.delete(`contactus/${id}`);
   },
 };

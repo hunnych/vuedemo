@@ -3,9 +3,7 @@
     <Header />
     <div id="contact-form" class="contact-form">
       <h1 class="contact-form_title">Contact Form</h1>
-      <p v-if="$store.state.NotificationMessageSuccess">
-        {{ $store.state.NotificationMessageSuccess }}
-      </p>
+      <Notification />
       <div class="separator"></div>
       <form class="form" @submit.prevent="submit">
         <input
@@ -51,12 +49,14 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Notification from "@/components/Notification.vue";
 import { required, email } from "vuelidate/lib/validators";
 export default {
   name: "ContactUs",
   components: {
     Header,
     Footer,
+    Notification
   },
   data() {
     return {

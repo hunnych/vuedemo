@@ -12,12 +12,8 @@
         <md-table-toolbar>
           <h1 class="md-title">Contact Us</h1>
         </md-table-toolbar>
-
-        <md-table-row
-          slot="md-table-row"
-          slot-scope="{ item }"
-          @click="onSelect(item)"
-        >
+        <Notification />
+        <md-table-row slot="md-table-row" slot-scope="{ item }">
           <md-table-cell md-label="Name" md-sort-by="name">{{
             item.name
           }}</md-table-cell>
@@ -25,7 +21,14 @@
             item.email
           }}</md-table-cell>
           <md-table-cell md-label="Action">
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <span
+              @click="onSelect(item)"
+              style="cursor: pointer; font-size: 20px"
+              >&#x1F441;</span
+            >&nbsp;&nbsp;
+            <span @click="removeEntry(item.id)" style="cursor: pointer; font-size: 14px"
+              >&#10060;</span
+            >
           </md-table-cell>
         </md-table-row>
       </md-table>
@@ -39,6 +42,7 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Modal from "@/components/Modal.vue";
+import Notification from "@/components/Notification.vue";
 
 export default {
   $inheritAttrs: false,
@@ -46,6 +50,7 @@ export default {
   components: {
     Header,
     Footer,
+    Notification
   },
   data: () => ({
     currentSort: "name",
@@ -74,9 +79,26 @@ export default {
       );
       this.selected = null;
     },
+    async removeEntry(id) {
+      console.log("remove here");
+      if (confirm("Do you really want to delete?")) {
+          await this.$store.dispatch('RemoveContactUs',id).then(()=>{
+            console.log("Remove entry called",this.$store.state.ContactUs);
+            this.fetchRecords();
+            // this.users = this.$store.state.ContactUs;
+          });
+      }
+    },
+    fetchRecords(){
+      this.$store.dispatch("getContactUsData").then(()=>{
+        this.users = this.$store.state.ContactUs;
+      })
+       
+    }
   },
   created() {
     this.$store.dispatch("getContactUsData").then(() => {
+      console.log("Created hook called",this.$store.state.ContactUs);
       this.users = this.$store.state.ContactUs;
     });
   },
