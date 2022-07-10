@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <div v-if="users">
+    <div>
+      <Notification :showSnackbar="showSnackbar" />
       <md-table
         v-model="users"
         :md-sort.sync="currentSort"
@@ -10,9 +11,10 @@
         md-card
       >
         <md-table-toolbar>
-          <h1 class="md-title">Contact Us</h1>
+          <!-- <h1 class="md-title">Contact Us</h1> -->
+          <span class="md-headline">Contact Us Data</span>
         </md-table-toolbar>
-        <Notification />
+        <md-divider></md-divider>
         <md-table-row slot="md-table-row" slot-scope="{ item }">
           <md-table-cell md-label="Name" md-sort-by="name">{{
             item.name
@@ -26,7 +28,9 @@
               style="cursor: pointer; font-size: 20px"
               >&#x1F441;</span
             >&nbsp;&nbsp;
-            <span @click="removeEntry(item.id)" style="cursor: pointer; font-size: 14px"
+            <span
+              @click="removeEntry(item.id)"
+              style="cursor: pointer; font-size: 14px"
               >&#10060;</span
             >
           </md-table-cell>
@@ -50,13 +54,14 @@ export default {
   components: {
     Header,
     Footer,
-    Notification
+    Notification,
   },
   data: () => ({
     currentSort: "name",
     currentSortOrder: "asc",
     users: null,
     selected: null,
+    showSnackbar: false,
   }),
   methods: {
     customSort(value) {
@@ -82,23 +87,23 @@ export default {
     async removeEntry(id) {
       console.log("remove here");
       if (confirm("Do you really want to delete?")) {
-          await this.$store.dispatch('RemoveContactUs',id).then(()=>{
-            console.log("Remove entry called",this.$store.state.ContactUs);
-            this.fetchRecords();
-            // this.users = this.$store.state.ContactUs;
-          });
+        await this.$store.dispatch("RemoveContactUs", id).then(() => {
+          console.log("Remove entry called", this.$store.state.ContactUs);
+          this.fetchRecords();
+          this.showSnackbar = true;
+          // this.users = this.$store.state.ContactUs;
+        });
       }
     },
-    fetchRecords(){
-      this.$store.dispatch("getContactUsData").then(()=>{
+    fetchRecords() {
+      this.$store.dispatch("getContactUsData").then(() => {
         this.users = this.$store.state.ContactUs;
-      })
-       
-    }
+      });
+    },
   },
   created() {
     this.$store.dispatch("getContactUsData").then(() => {
-      console.log("Created hook called",this.$store.state.ContactUs);
+      console.log("Created hook called", this.$store.state.ContactUs);
       this.users = this.$store.state.ContactUs;
     });
   },
@@ -113,5 +118,16 @@ export default {
 }
 .md-table-head {
   text-align: center;
+}
+.md-table-cell {
+  text-align: center;
+}
+.md-table-head-label {
+  font-size: 15px !important;
+  padding-left: 0px !important;
+  font-weight: 300 !important;
+}
+container {
+  padding-right: 0px;
 }
 </style>

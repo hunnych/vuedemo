@@ -4,113 +4,105 @@
     <div>
       <Slider height="100px" width="2000px" />
       <!-- <h2>Content Section</h2> -->
-      <div class="md-layout md-gutter">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>Italy</h4>
+      <Transition name="fade">
+        <div class="gridMargin">
+          <div class="md-layout md-gutter md-alignment-center item">
+            <div class="md-layout-item md-layout md-gutter">
+              <div
+                class="md-layout-item md-size-33"
+                v-for="item in items"
+                :key="item.id"
+              >
+                <div class="list-item">
+                  <div class="list-thumb">
+                    <div class="title">
+                      <h4>{{ item.name }}</h4>
+                    </div>
+                    <img
+                      :src="item.image_path"
+                      class="image"
+                      alt="destination 1"
+                    />
+                  </div>
+                  <!-- /.list-thumb -->
+                  <div class="list-content">
+                    <h5>{{ item.destinations }}</h5>
+                    <span>{{ item.package_details }}</span>
+                    <a href="#" class="price-btn">{{ item.price }} Book Now</a>
+                  </div>
+                </div>
               </div>
-              <img src="destination_1.jpg" alt="destination 1" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Rome, Milan, Naples</h5>
-              <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
-              <a href="#" class="price-btn">$1,700 Book Now</a>
             </div>
           </div>
         </div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>France</h4>
-              </div>
-              <img src="destination_2.jpg" alt="destination 2" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Paris, Marseille, Lyon</h5>
-              <span>NEW PALACE, 5 NIGHTS, 5 STARS</span>
-              <a href="#" class="price-btn">$2,200 Book Now</a>
-            </div>
-            <!-- /.list-content -->
-          </div>
-        </div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>Germany</h4>
-              </div>
-              <img src="destination_3.jpg" alt="destination 3" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Berlin, Hamburg, Munich</h5>
-              <span>LUXE HOTEL, 5 NIGHTS, 6 STARS</span>
-              <a href="#" class="price-btn">$3,300 Book Now</a>
-            </div>
-            <!-- /.list-content -->
-          </div>
-        </div>
-        <div class="md-layout-item"></div>
-      </div>
-      <div class="md-layout md-gutter">
-        <div class="md-layout-item"></div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>Spain</h4>
-              </div>
-              <img src="destination_4.jpg" alt="destination 4" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Madrid, Bercelona, Valencia</h5>
-              <span>GOOD HOTEL, 4 NIGHTS, 6 STARS</span>
-              <a href="#" class="price-btn">$4,400 Book Now</a>
-            </div>
-            <!-- /.list-content -->
-          </div>
-        </div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>Netherlands</h4>
-              </div>
-              <img src="destination_5.jpg" alt="destination 5" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Amsterdam, Delft, The Hague</h5>
-              <span>BEST HOTEL, 6 NIGHTS, 7 STARS</span>
-              <a href="#" class="price-btn">$5,500 Book Now</a>
-            </div>
-            <!-- /.list-content -->
-          </div>
-        </div>
-        <div class="md-layout-item">
-          <div class="list-item">
-            <div class="list-thumb">
-              <div class="title">
-                <h4>Switzerland</h4>
-              </div>
-              <img src="destination_6.jpg" alt="destination 6" />
-            </div>
-            <!-- /.list-thumb -->
-            <div class="list-content">
-              <h5>Zürich, Geneva, Basel</h5>
-              <span>NEW HOTEL, 7 NIGHTS, 7 STARS</span>
-              <a href="#" class="price-btn">$6,600 Book Now</a>
+      </Transition>
+    </div>
+
+    <div class="empty-div"></div>
+    <div class="md-layout md-gutter md-alignment-center textMargin">
+      <div class="md-layout-item md-layout md-gutter">
+        <div class="md-layout-item md-size-33">
+          <span itemprop="name" class="md-headline"> Why EasyTrip? </span>
+          <md-divider></md-divider>
+          <div style="margin-top: 20px">
+            <div itemprop="text">
+              <span class="md-body-1"
+                >Established in 2000, EasyTrip has since positioned itself as
+                one of the leading companies, providing great offers,
+                competitive airfares, exclusive discounts, and a seamless online
+                booking experience to many of its customers. The experience of
+                booking your flight tickets, hotel stay, and holiday package
+                through our desktop site or mobile app can be done with complete
+                ease and no hassles at all. We also deliver amazing offers, such
+                as Instant Discounts, Fare Calendar, MyRewardsProgram, MyWallet,
+                and many more while updating them from time to time to better
+                suit our customers’ evolving needs and demands.</span
+              >
             </div>
           </div>
         </div>
-        <div class="md-layout-item"></div>
+        <div class="md-layout-item md-size-33">
+          <span itemprop="name" class="md-headline">
+            Booking Flights with EasyTrip
+          </span>
+          <md-divider></md-divider>
+          <div style="margin-top: 20px">
+            <div itemprop="text">
+              <span class="md-body-1"
+                >At EasyTrip, you can find the best of deals and cheap air
+                tickets to any place you want by booking your tickets on our
+                website or app. Being India’s leading website for hotel, flight,
+                and holiday bookings, EasyTrip helps you book flight tickets
+                that are affordable and customized to your convenience. With
+                customer satisfaction being our ultimate goal, we also have a
+                24/7 dedicated helpline to cater to our customer’s queries and
+                concerns. Serving over 5 million happy customers, we at EasyTrip
+                are glad to fulfill the dreams of folks who need a quick and
+                easy means to find air tickets. You can get a hold of the
+                cheapest flight of your choice today while also enjoying the
+                other available options for your travel needs with us.</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="md-layout-item md-size-33">
+          <span itemprop="name" class="md-headline">
+            Domestic Flights with EasyTrip
+          </span>
+          <md-divider></md-divider>
+          <div style="margin-top: 20px">
+            <div itemprop="text">
+              <span class="md-body-1"
+                >EasyTrip is India's leading player for flight bookings. With
+                the cheapest fare guarantee, experience great value at the
+                lowest price. Instant notifications ensure current flight
+                status, instant fare drops, amazing discounts, instant refunds
+                and rebook options, price comparisons and many more interesting
+                features.</span
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="empty-div"></div>
@@ -130,6 +122,21 @@ export default {
     Header,
     Footer,
     Slider,
+  },
+  data() {
+    return {
+      items: null,
+    };
+  },
+  methods: {
+    async getTravelPlacesData() {
+      await this.$store.dispatch("GetTravelPlacesData");
+      this.items = await this.$store.state.TravelData;
+      console.log("items", this.items);
+    },
+  },
+  mounted() {
+    this.getTravelPlacesData();
   },
 };
 </script>
@@ -174,6 +181,7 @@ export default {
   font-weight: 300;
   text-transform: uppercase;
   margin: 0 0 15px 0;
+  font-size: 14px !important;
 }
 
 .list-item .list-content a.price-btn {
@@ -193,5 +201,43 @@ export default {
 }
 .empty-div {
   height: 100px;
+}
+.item {
+  text-align: center;
+  font-size: 20px;
+  transition: opacity 1s;
+  animation: fade 1s;
+}
+.gridMargin {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.image {
+  transition: transform 0.2s;
+}
+.image:hover {
+  transform: scale(1.5);
+}
+.textMargin {
+  text-align: center;
+  background-color: #e7e7e7;
+  padding: 20px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>

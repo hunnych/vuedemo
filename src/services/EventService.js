@@ -17,4 +17,7 @@ export default {
   DeleteContactUs(id) {
     return apiClient.delete(`contactus/${id}`);
   },
+  GetTravelPlaces() {
+    return apiClient.get("places");
+  },
 };

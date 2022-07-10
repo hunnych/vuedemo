@@ -9,6 +9,7 @@ export default new Vuex.Store({
     ContactUs: null,
     NotificationMessageSuccess: null,
     NotificationMessageFailed: null,
+    TravelData: null,
   },
   mutations: {
     SET_CONTACT_US(state, payload) {
@@ -17,7 +18,10 @@ export default new Vuex.Store({
     },
     SET_NOTIFICATION(state, payload) {
       state.NotificationMessageSuccess = payload;
-      setTimeout(() => state.NotificationMessageSuccess = null, 5000);
+      setTimeout(() => (state.NotificationMessageSuccess = null), 5000);
+    },
+    SET_TRAVEL_DATA(state, payload) {
+      state.TravelData = payload;
     },
   },
   actions: {
@@ -36,6 +40,10 @@ export default new Vuex.Store({
       await EventService.DeleteContactUs(id).then(() => {
         commit("SET_NOTIFICATION", "Record deleted successfully");
       });
+    },
+    async GetTravelPlacesData({ commit }) {
+      const travel = await EventService.GetTravelPlaces();
+      commit("SET_TRAVEL_DATA", travel.data);
     },
   },
 });

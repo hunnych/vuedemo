@@ -69,7 +69,7 @@ export default {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 25%;
+  top: 15%;
   width: auto;
   padding: 16px;
   color: white;

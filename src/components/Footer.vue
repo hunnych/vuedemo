@@ -16,7 +16,7 @@ export default {
 .fixed-footer {
   width: 100%;
   position: fixed;
-  background: #448aff !important;
+  background: #9c27b0 !important;
   padding: 10px 0;
   /* color: #448aff; */
   bottom: 0;

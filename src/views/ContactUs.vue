@@ -3,7 +3,7 @@
     <Header />
     <div id="contact-form" class="contact-form">
       <h1 class="contact-form_title">Contact Form</h1>
-      <Notification />
+      <Notification :showSnackbar="showSnackbar" />
       <div class="separator"></div>
       <form class="form" @submit.prevent="submit">
         <input
@@ -56,13 +56,14 @@ export default {
   components: {
     Header,
     Footer,
-    Notification
+    Notification,
   },
   data() {
     return {
       name: null,
       email: null,
       message: null,
+      showSnackbar: false,
     };
   },
   validations: {
@@ -88,6 +89,7 @@ export default {
             this.email = null;
             this.name = null;
             this.message = null;
+            this.showSnackbar = true;
             this.$v.$reset();
           });
       }
@@ -159,5 +161,8 @@ export default {
 .contact-form .button {
   font-size: 15px;
   border-radius: 3px;
+}
+.errorMessage {
+  color: red;
 }
 </style>

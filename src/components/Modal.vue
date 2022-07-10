@@ -54,6 +54,7 @@ export default {
   border: 1px solid #dcdfe6;
   border-bottom: 0px;
   transition: all 0.2s ease;
+  box-shadow: none;
   border-radius: 8px;
   z-index: 999;
   overflow: hidden;
@@ -65,7 +66,7 @@ export default {
   display: flex;
   align-self: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 10px !important;
 }
 span {
   font-size: 24px;
@@ -83,5 +84,9 @@ span {
 a.another-modal {
   color: #000;
   border-bottom: 1px solid #000;
+}
+.modal-content .modal-header {
+  padding: 0px;
+  border-bottom: none;
 }
 </style>

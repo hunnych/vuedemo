@@ -1,10 +1,94 @@
 {
   "contactus": [
     {
-      "name": "Harshit chauhan",
-      "email": "hunybuny969@gmail.com",
-      "message": "This is a test inquiry",
-      "id": "cFOXFhF"
+      "name": "Parth sadatiya",
+      "email": "parth.sadatiya@radixweb.com",
+      "message": "This is test inquiry",
+      "id": "V-XnVZK"
+    },
+    {
+      "name": "Pranav kolharkar",
+      "email": "harshit.chauha@radixweb.com",
+      "message": "Testing Entry",
+      "id": "OORoFhf"
+    },
+    {
+      "name": "Dev patel",
+      "email": "dev@gmail.com",
+      "message": "This inquiry is just for testing purpose.",
+      "id": "zNjAPUG"
+    },
+    {
+      "name": "ashish kumar",
+      "email": "ashish@gmail.com",
+      "message": "This is test enquiry from ashish",
+      "id": "ePDWx0p"
+    }
+  ],
+  "places": [
+    {
+      "id": "1",
+      "name": "Italy",
+      "price": "$1,700",
+      "image_path": "destination_1.jpg",
+      "destinations": "Rome, Milan, Naples",
+      "package_details": "SILVER HOTEL, 4 NIGHTS, 5 STARS"
+    },
+    {
+      "id": "2",
+      "name": "France",
+      "price": "$2,200",
+      "image_path": "destination_2.jpg",
+      "destinations": "Paris, Marseille, Lyon",
+      "package_details": "NEW PALACE, 5 NIGHTS, 5 STARS"
+    },
+    {
+      "id": "3",
+      "name": "Germany",
+      "price": "$3,300",
+      "image_path": "destination_3.jpg",
+      "destinations": "Berlin, Hamburg, Munich",
+      "package_details": "LUXE HOTEL, 5 NIGHTS, 6 STARS"
+    },
+    {
+      "id": "4",
+      "name": "Spain",
+      "price": "$4,400",
+      "image_path": "destination_4.jpg",
+      "destinations": "Madrid, Bercelona, Valencia",
+      "package_details": "GOOD HOTEL, 4 NIGHTS, 6 STARS"
+    },
+    {
+      "id": "5",
+      "name": "Netherlands",
+      "price": "$5,500",
+      "image_path": "destination_5.jpg",
+      "destinations": "Amsterdam, Delft, The Hague",
+      "package_details": "BEST HOTEL, 6 NIGHTS, 7 STARS"
+    },
+    {
+      "id": "6",
+      "name": "Switzerland",
+      "price": "$6,600",
+      "image_path": "destination_6.jpg",
+      "destinations": "Zürich, Geneva, Basel",
+      "package_details": "NEW HOTEL, 7 NIGHTS, 7 STARS"
+    },
+    {
+      "id": "7",
+      "name": "United States",
+      "price": "$7,600",
+      "image_path": "destination_1.jpg",
+      "destinations": "New York, Indianapolis, Texas",
+      "package_details": "Paradise HOTEL, 8 NIGHTS, 7 STARS"
+    },
+    {
+      "id": "8",
+      "name": "Ukraine",
+      "price": "$5,600",
+      "image_path": "destination_2.jpg",
+      "destinations": "Kharkiv, Kherson",
+      "package_details": "Pinkin HOTEL, 4 NIGHTS, 5 STARS"
     }
   ]
 }
